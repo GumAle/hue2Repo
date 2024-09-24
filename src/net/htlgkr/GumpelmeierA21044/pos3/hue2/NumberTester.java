@@ -1,5 +1,7 @@
 package net.htlgkr.GumpelmeierA21044.pos3.hue2;
 
+import net.htlgkr.GumpelmeierA21044.pos3.hue2.interfaces.NumberTest;
+
 public class NumberTester {
 
     private String filename;
