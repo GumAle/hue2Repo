@@ -13,5 +13,7 @@ public class HalloJavaMitForEach {
         for(int i = 0; i < stringList.size(); i++) {
             System.out.println(stringList.get(i));
         }
+
+        stringList.forEach(System.out::println);
     }
 }
