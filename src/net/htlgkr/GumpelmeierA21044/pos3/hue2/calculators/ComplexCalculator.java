@@ -12,21 +12,21 @@ public class ComplexCalculator extends AbstractCalculation {
 
     @Override
     public Number add(Number a, Number b) {
-        return null;
+        return add.calc(a, b);
     }
 
     @Override
     public Number substract(Number a, Number b) {
-        return null;
+        return substract.calc(a, b);
     }
 
     @Override
     public Number multiply(Number a, Number b) {
-        return null;
+        return multiply.calc(a, b);
     }
 
     @Override
     public Number divide(Number a, Number b) {
-        return null;
+        return divide.calc(a, b);
     }
 }
