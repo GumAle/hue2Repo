@@ -8,7 +8,7 @@ public class NumberTester {
     private NumberTest palindromeTester;
 
     public NumberTester(String filename) {
-        this.filename = filename;
+
     }
 
     public void setOddEvenTester(NumberTest oddTester) {
