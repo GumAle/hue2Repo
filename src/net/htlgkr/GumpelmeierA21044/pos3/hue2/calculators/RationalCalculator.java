@@ -1,18 +1,14 @@
 package net.htlgkr.GumpelmeierA21044.pos3.hue2.calculators;
 
-import net.htlgkr.GumpelmeierA21044.pos3.hue2.AbstractCalculation;
+import net.htlgkr.GumpelmeierA21044.pos3.hue2.AbstractCalculator;
 import net.htlgkr.GumpelmeierA21044.pos3.hue2.Number;
 import net.htlgkr.GumpelmeierA21044.pos3.hue2.interfaces.CalculationOperation;
 
-public class RationalCalculator extends AbstractCalculation {
+public class RationalCalculator extends AbstractCalculator {
 
     public RationalCalculator(CalculationOperation add, CalculationOperation substract, CalculationOperation multiply, CalculationOperation divide) {
-        super(
-                (x, y) -> new Number(x.getA() + y.getA(), 0),
-                (x, y) -> new Number(x.getA() - y.getA(), 0),
-                (x, y) -> new Number(x.getA() * y.getA(), 0),
-                (x, y) -> new Number(x.getA() / y.getA(), 0)
-        );
+        super(add, substract, multiply, divide);
+
     }
 
     @Override

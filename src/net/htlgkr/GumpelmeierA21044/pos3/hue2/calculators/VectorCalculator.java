@@ -1,10 +1,10 @@
 package net.htlgkr.GumpelmeierA21044.pos3.hue2.calculators;
 
-import net.htlgkr.GumpelmeierA21044.pos3.hue2.AbstractCalculation;
+import net.htlgkr.GumpelmeierA21044.pos3.hue2.AbstractCalculator;
 import net.htlgkr.GumpelmeierA21044.pos3.hue2.Number;
 import net.htlgkr.GumpelmeierA21044.pos3.hue2.interfaces.CalculationOperation;
 
-public class VectorCalculator extends AbstractCalculation {
+public class VectorCalculator extends AbstractCalculator {
 
     public VectorCalculator(CalculationOperation add, CalculationOperation substract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, substract, multiply, divide);
@@ -22,11 +22,13 @@ public class VectorCalculator extends AbstractCalculation {
 
     @Override
     public Number multiply(Number a, Number b) {
-        return multiply.calc(a, b);
+        double crossProduct = a.getA() * b.getB() - a.getB() * b.getA();
+        return new Number(0, crossProduct);
     }
 
     @Override
     public Number divide(Number a, Number b) {
-        return divide.calc(a, b);
+        double scalarProduct = a.getA() * b.getA() + a.getB() * b.getB();
+        return new Number(scalarProduct, 0);
     }
 }

@@ -10,9 +10,11 @@ public class HalloJavaMitForEach {
         stringList.add("java");
         stringList.add("python");
 
-        for(int i = 0; i < stringList.size(); i++) {
-            System.out.println(stringList.get(i));
+        for(String s : stringList) {
+            System.out.println(s);
         }
+
+        stringList.forEach(s -> System.out.println(s));
 
         stringList.forEach(System.out::println);
     }

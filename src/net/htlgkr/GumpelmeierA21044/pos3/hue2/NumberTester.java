@@ -5,7 +5,6 @@ import net.htlgkr.GumpelmeierA21044.pos3.hue2.interfaces.NumberTest;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class NumberTester {
@@ -14,18 +13,26 @@ public class NumberTester {
     private NumberTest oddTester;
     private NumberTest primeTester;
     private NumberTest palindromeTester;
-    private List<int[]> testCases;
 
     public NumberTester(String filename) {
-        testCases = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            int numberOfTests = Integer.parseInt(reader.readLine().trim());
+            int n = Integer.parseInt(reader.readLine()); // Anzahl der Testfälle
+            for (int i = 0; i < n; i++) {
+                String[] parts = reader.readLine().split(" ");
+                int testType = Integer.parseInt(parts[0]);
+                int number = Integer.parseInt(parts[1]);
 
-            for (int i = 0; i < numberOfTests; i++) {
-                String[] line = reader.readLine().trim().split("\\s+");
-                int testType = Integer.parseInt(line[0]);
-                int number = Integer.parseInt(line[1]);
-                testCases.add(new int[]{testType, number});
+                switch (testType) {
+                    case 1:
+                        System.out.println(oddTester.testNumber(number) ? "EVEN" : "ODD");
+                        break;
+                    case 2:
+                        System.out.println(primeTester.testNumber(number) ? "PRIME" : "NO PRIME");
+                        break;
+                    case 3:
+                        System.out.println(palindromeTester.testNumber(number) ? "PALINDROME" : "NO PALINDROME");
+                        break;
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
